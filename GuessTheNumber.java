@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 	/**
 	 * This program generates a random number between 1 and 100 and asks the user to guess the number.
-	 * The user has 10 guesses to guess the number correctly.
-	 * <p>
+	 * The user has 5 guesses to guess the number correctly.
+	 * <p
 	 * If the user guesses the number correctly, the program prints "You guessed the number!" and exits.
 	 * <p>
 	 * If the user does not guess the number correctly, the program prints "Your guess is too high!" or
@@ -22,7 +22,6 @@ import java.util.Scanner;
 	 * generates a new random number and asks the user to guess the number again.
 	 * If the user enters "no", the program exits.
 	 *
-	 * @author <a href="https://github.com/itsyourap">Ankan Pal</a>
 	 */
 
 	public class GuessTheNumber {
@@ -110,8 +109,8 @@ import java.util.Scanner;
 	     * <p>
 	     * If the user's guess is correct, the method prints "Congrats! You guessed the number correctly!".
 	     *
-	     * @param guess The user's guess
-	     * @return true if the user's guess is correct, false otherwise
+	     * @guess The user's guess
+	     * @return the true if the user's guess is correct, false otherwise
 	     */
 	    private static boolean checkGuess(int guess) {
 	        if (guess < MIN_RANDOM_NUMBER || guess > MAX_RANDOM_NUMBER) {
