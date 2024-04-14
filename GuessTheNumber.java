@@ -7,14 +7,6 @@ import java.util.Scanner;
 	/**
 	 * This program generates a random number between 1 and 100 and asks the user to guess the number.
 	 * The user has 5 guesses to guess the number correctly.
-	 * <p
-	 * If the user guesses the number correctly, the program prints "You guessed the number!" and exits.
-	 * <p>
-	 * If the user does not guess the number correctly, the program prints "Your guess is too high!" or
-	 * "Your guess is too low!" depending on whether the guess is higher or lower than the random number.
-	 * <p>
-	 * If the user does not guess the number correctly in 10 guesses, the program prints
-	 * "You ran out of guesses!" and exits.
 	 * <p>
 	 * The program also prints the random number after the user has run out of guesses.
 	 * <p>
@@ -41,23 +33,13 @@ import java.util.Scanner;
 	    private static Scanner scanner;
 
 	    public static void main(String[] args) {
-	        // Initialize the scanner object
 	        scanner = new Scanner(System.in);
+		    playGame();
 
-	        // Start the game
-	        playGame();
-
-	        // Close the scanner object
 	        scanner.close();
 	    }
 
-	    /**
-	     * This method starts the game.
-	     * <p>
-	     * The game works as commented in the class documentation.
-	     * The method also asks the user if they want to play again.
-	     * If the user enters "yes", the method calls itself again (restarts the game again).
-	     */
+	    
 	    private static void playGame() {
 	        roundNumber++;
 	        System.out.printf("Round %d\n", roundNumber);
@@ -100,18 +82,7 @@ import java.util.Scanner;
 	        }
 	    }
 
-	    /**
-	     * This method checks if the user's guess is correct.
-	     * <p>
-	     * If the user's guess is lower than the random number, the method prints "Your guess is too low!".
-	     * <p>
-	     * If the user's guess is higher than the random number, the method prints "Your guess is too high!".
-	     * <p>
-	     * If the user's guess is correct, the method prints "Congrats! You guessed the number correctly!".
-	     *
-	     * @guess The user's guess
-	     * @return the true if the user's guess is correct, false otherwise
-	     */
+	    
 	    private static boolean checkGuess(int guess) {
 	        if (guess < MIN_RANDOM_NUMBER || guess > MAX_RANDOM_NUMBER) {
 	            System.out.printf("Your guess should be between %d and %d\n", MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
@@ -128,22 +99,13 @@ import java.util.Scanner;
 	        return false;
 	    }
 
-	    /**
-	     * This method generates a new random number between {@link #MIN_RANDOM_NUMBER} and {@link #MAX_RANDOM_NUMBER}
-	     * and assigns it to {@link #randomNumber}.
-	     * <p>
-	     * This method also prints a message to the console informing the user that a new random number has been
-	     * generated.
-	     */
 	    private static void renewRandomNumber() {
 	        randomNumber = (int) (Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;
 	        System.out.printf("A random number has been generated between %d and %d", MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 	        System.out.println();
 	    }
 
-	    /**
-	     * This method displays the total points scored by the user throughout all the rounds.
-	     */
+	    
 	    private static void displayTotalPoints() {
 	        System.out.printf("You scored total %d points out of %d\n", totalPoints, MAX_GUESSES * roundNumber);
 	    
